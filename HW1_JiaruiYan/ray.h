@@ -12,7 +12,7 @@ public:
     Vector3f dir;
     Ray();
     Ray(Point3f iP, Vector3f iD);
-    Ray Transform(glm::mat4& iMat);
+    Ray Transform(const glm::mat4& iMat);
 };
 
 #endif // RAY_H

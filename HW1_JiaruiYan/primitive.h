@@ -18,7 +18,7 @@ public:
     // move the basic Shape around the scene and alter its scale and orientation.
     Transform mTransform;
 
-    Shape(){}
+    Shape();
     Shape(Transform& iTransform);
     virtual Opt<Intersection> getIntersection(Ray) const = 0;
     virtual ~Shape(){}

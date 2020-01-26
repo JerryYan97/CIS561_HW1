@@ -39,6 +39,11 @@ glm::mat4 Camera::getViewProj()
     return glm::perspective(glm::radians(fovy), width / (float)height, near_clip, far_clip) * glm::lookAt(eye, ref, worldUp);
 }
 
+glm::mat4 Camera::getInverseViewProj()
+{
+    return glm::inverse(getViewProj());
+}
+
 Ray Camera::rayCast(unsigned int rowIdx, unsigned int colIdx)
 {
     // Input Boundary Check.

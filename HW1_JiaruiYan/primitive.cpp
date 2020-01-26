@@ -21,3 +21,10 @@ Opt<Intersection> Primitive::getIntersection(Ray iRay) const
     // Return an Intersection value if the ray intersects the object.
     // The Intersection's objectHit should point to this.
 }
+
+Shape::Shape()
+{}
+
+Shape::Shape(Transform &iTransform)
+    :   mTransform(iTransform)
+{}

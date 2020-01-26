@@ -12,7 +12,7 @@ Ray::Ray(Point3f iP, Vector3f iD)
     dir = iD;
 }
 
-Ray Ray::Transform(glm::mat4 &iMat)
+Ray Ray::Transform(const glm::mat4 &iMat)
 {
     glm::vec4 t_pos = iMat * glm::vec4(pos, 1.0);
     glm::vec4 t_dir = iMat * glm::vec4(dir, 0.0);

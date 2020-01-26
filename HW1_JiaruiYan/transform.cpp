@@ -9,7 +9,6 @@ Transform::Transform() :
     mWorldTransform = glm::translate(glm::mat4(), mTranslation) * RMat * glm::scale(glm::mat4(), mScale);
     mWorldTransformInverse = glm::inverse(mWorldTransform);
     mWorldTransformInverseTranspose = glm::mat3(glm::transpose(mWorldTransformInverse));
-    int i = 0;
 }
 
 Transform::Transform(glm::vec3 it, glm::vec3 ir, glm::vec3 is) :
@@ -21,5 +20,4 @@ Transform::Transform(glm::vec3 it, glm::vec3 ir, glm::vec3 is) :
     mWorldTransform = glm::translate(glm::mat4(), mTranslation) * RMat * glm::scale(glm::mat4(), mScale);
     mWorldTransformInverse = glm::inverse(mWorldTransform);
     mWorldTransformInverseTranspose = glm::mat3(glm::transpose(mWorldTransformInverse));
-    int i = 0;
 }

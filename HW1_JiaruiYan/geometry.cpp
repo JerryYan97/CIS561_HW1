@@ -16,8 +16,9 @@ SquarePlane::SquarePlane()
 
 Opt<Intersection> Sphere::getIntersection(Ray iRay) const
 {
-    Point3f localPos = Point3f(mTransform.mWorldTransformInverse * glm::vec4(iRay.pos, 1.0f));
-    Vector3f localDir = Vector3f(mTransform.mWorldTransformInverse * glm::vec4(iRay.dir, 0.0f));
+    Ray localRay = iRay.Transform(mTransform.mWorldTransformInverse);
+    Point3f localPos = localRay.pos;
+    Vector3f localDir = localRay.dir;
 
     glm::vec3 oc = localPos - mOrigin;
     float a = glm::dot(localDir, localDir);
@@ -55,8 +56,9 @@ Opt<Intersection> Sphere::getIntersection(Ray iRay) const
 
 Opt<Intersection> SquarePlane::getIntersection(Ray iRay) const
 {
-    Point3f localPos = Point3f(mTransform.mWorldTransformInverse * glm::vec4(iRay.pos, 1.0f));
-    Vector3f localDir = Vector3f(mTransform.mWorldTransformInverse * glm::vec4(iRay.dir, 0.0f));
+    Ray localRay = iRay.Transform(mTransform.mWorldTransformInverse);
+    Point3f localPos = localRay.pos;
+    Vector3f localDir = localRay.dir;
 
     float t = glm::dot(mNormal, (mOrigin - localPos)) / glm::dot(mNormal, localDir);
 

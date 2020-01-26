@@ -21,6 +21,7 @@ public:
     Camera(){}
     Camera(unsigned int w, unsigned int h, const glm::vec3 &e, const glm::vec3 &r, const glm::vec3 &worldUp);
     glm::mat4 getViewProj();
+    glm::mat4 getInverseViewProj();
     Ray rayCast(unsigned int rowIdx, unsigned int colIdx);
 };
 
