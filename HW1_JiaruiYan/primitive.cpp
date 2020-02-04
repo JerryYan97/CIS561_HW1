@@ -22,6 +22,23 @@ Opt<Intersection> Primitive::getIntersection(Ray iRay) const
     // The Intersection's objectHit should point to this.
 }
 
+// The distance in primitive's local space.
+// Thus, only zero value is useful.
+float Primitive::sdf(Point3f p) const
+{
+    return mUPtrShape->sdf(p);
+}
+
+Opt<Intersection> Primitive::generateIntersection(Point3f p) const
+{
+    Opt<Intersection> temp = mUPtrShape->generateIntersection(p);
+    if(temp != std::experimental::nullopt)
+    {
+        temp->mPtrObjectHit = this;
+    }
+    return temp;
+}
+
 Shape::Shape()
 {}
 

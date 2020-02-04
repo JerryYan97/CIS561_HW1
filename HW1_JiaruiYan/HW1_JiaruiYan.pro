@@ -32,7 +32,10 @@ SOURCES += \
     transform.cpp \
     primitive.cpp \
     scene.cpp \
-    geometry.cpp
+    geometry.cpp \
+    smoothblend.cpp \
+    light.cpp \
+    material.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +46,10 @@ HEADERS += \
     transform.h \
     primitive.h \
     scene.h \
-    geometry.h
+    geometry.h \
+    smoothblend.h \
+    light.h \
+    material.h
 
 FORMS += \
         mainwindow.ui

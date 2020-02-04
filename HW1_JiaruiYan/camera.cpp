@@ -2,7 +2,7 @@
 #include <iostream>
 
 Camera::Camera(unsigned int iw, unsigned int ih, const glm::vec3 &e, const glm::vec3 &r, const glm::vec3 &worldUp):
-    fovy(45),
+    fovy(50),
     width(iw),
     height(ih),
     near_clip(0.1f),
